@@ -7,7 +7,7 @@ class DashboardController < ApplicationController
   def create
     if request.post?
       t = Teacher.find_by_email(params[:email])
-        if t.authenticate(params[:password])
+        if t && t.authenticate(params[:password])
           session[:logged_in] = true
           redirect_to teachers_path, notice: "Login Success"
         else

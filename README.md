@@ -13,3 +13,10 @@ This app was also designed to have three different types of users with seperate 
 
 ## Database Structure
 ![alt tag](https://github.com/damenate/gradebook/blob/master/app/assets/images/data_structure.png)
+
+
+
+
+
+
+end
