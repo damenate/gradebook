@@ -7,8 +7,7 @@
     <tr>
       <th>Name</th>
       <th>Email</th>
-      <th>Password digest</th>
-      <th colspan="3"></th>
+      <th colspan="4"></th>
     </tr>
   </thead>
 
@@ -17,7 +16,7 @@
       <tr>
         <td><%= teacher.name %></td>
         <td><%= teacher.email %></td>
-        <td><%= teacher.password_digest %></td>
+        <td><%= teacher.password %></td>
         <td><%= link_to 'Show', teacher %></td>
         <td><%= link_to 'Edit', edit_teacher_path(teacher) %></td>
         <td><%= link_to 'Destroy', teacher, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -27,5 +26,9 @@
 </table>
 
 <br>
-
-<%= link_to 'New Teacher', new_teacher_path %>
+<div>
+  <tr class="spacing"><%= link_to 'New Teacher', new_teacher_path %></tr>&nbsp;&nbsp;
+  <tr class="spacing"><%= link_to 'New Student', new_student_path %></tr>&nbsp;&nbsp;
+  <tr class="spacing"><%= link_to 'New Grade', new_grade_path %><tr>&nbsp;&nbsp;
+  <tr class="spacing"><%= link_to 'New Parent', new_parent_path %></tr>&nbsp;&nbsp;
+</div>

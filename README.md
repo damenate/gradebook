@@ -2,5 +2,5 @@
 
 
 
-## Database Structure 
-![alt tag](https://github.com/Ru-T/gradebook/blob/master/app/assets/images/database_structure.png)
+## Database Structure
+![alt tag](https://github.com/damenate/gradebook/blob/master/app/assets/images/data_structure.png)

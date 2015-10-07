@@ -9,7 +9,7 @@ class DashboardController < ApplicationController
       t = Teacher.find_by_email(params[:email])
         if t.authenticate(params[:password])
           session[:logged_in] = true
-          redirect_to new_teacher_path, notice: "Login Success"
+          redirect_to teachers_path, notice: "Login Success"
         else
           redirect_to dashboard_new_path, notice: "Login Denied"
         end

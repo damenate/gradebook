@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :parents
+  resources :grades
   resources :students
   resources :teachers
   root 'dashboard#new'
