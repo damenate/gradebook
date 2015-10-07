@@ -2,33 +2,42 @@
 
 <h1>Listing Teachers</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Email</th>
-      <th colspan="4"></th>
-    </tr>
-  </thead>
 
+<% @teachers.each do |teacher| %>
+  <h3><%= teacher.name %> | <%= teacher.email %></h3>
+      <th colspan="3"></th>
   <tbody>
-    <% @teachers.each do |teacher| %>
       <tr>
-        <td><%= teacher.name %></td>
-        <td><%= teacher.email %></td>
         <td><%= teacher.password %></td>
-        <td><%= link_to 'Show', teacher %></td>
-        <td><%= link_to 'Edit', edit_teacher_path(teacher) %></td>
-        <td><%= link_to 'Destroy', teacher, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Info', teacher %></td>&nbsp;&nbsp;
+        <td><%= link_to 'Edit Info', edit_teacher_path(teacher) %></td>&nbsp;&nbsp;
+        <td><%= link_to 'Destroy Account', teacher, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
-    <% end %>
   </tbody>
-</table>
 
-<br>
-<div>
-  <tr class="spacing"><%= link_to 'New Teacher', new_teacher_path %></tr>&nbsp;&nbsp; |
-  <tr class="spacing"><%= link_to 'New Student', new_student_path %></tr>&nbsp;&nbsp; |
-  <tr class="spacing"><%= link_to 'New Grade', new_grade_path %><tr>&nbsp;&nbsp; |
-  <tr class="spacing"><%= link_to 'New Parent', new_parent_path %></tr>&nbsp;&nbsp;
-</div>
+  <p>
+    <th>Name</th>
+  <th>Email</th>
+  <th colspan="5"></th>
+  <% teacher.students.each do |student| %>
+  <tbody>
+    <tr>
+      <td><%= student.name %></td>
+      <td><%= student.email %></td>
+    <p class="">
+      <br>
+      <td><%= link_to 'Add Parent', new_parent_path %></td>&nbsp;&nbsp;
+      <td><%= link_to 'Add Grade', new_grade_path %></td>&nbsp;&nbsp;
+      <td><%= link_to 'Show', student %></td>&nbsp;&nbsp;
+      <td><%= link_to 'Edit', edit_student_path(student) %></td>&nbsp;&nbsp;
+      <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </p>
+    </tr>
+  </tbody>
+</p>
+  <% end %>
+  <p><%= link_to 'Add New Student to Class', new_student_path(teacher) %></p>
+<% end %>
+
+
+  <%= link_to 'New Teacher', new_teacher_path %>&nbsp;&nbsp;| <%= link_to 'Logout', login_path, method: "delete" %>

@@ -47,8 +47,8 @@ class TeachersController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_teacher
-      @teacher = Teacher.find(params[:id])
+    def set_current_teacher
+      @logged_in_teacher = Teacher.find_by_id(session[:teacher_id])
     end
 
     # Only allow a trusted parameter "white list" through.

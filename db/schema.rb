@@ -25,7 +25,6 @@ ActiveRecord::Schema.define(version: 20151007032120) do
   create_table "parents", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
-    t.string   "string"
     t.integer  "student_id"
     t.string   "password_digest"
     t.datetime "created_at",      null: false

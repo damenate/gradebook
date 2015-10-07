@@ -1,13 +1,14 @@
 Rails.application.routes.draw do
-  
+
   resources :parents
   resources :grades
   resources :students
   resources :teachers
+
   root 'dashboard#new'
-  get 'dashboard/new'
-  post 'dashboard/create'
-  delete 'dashboard/destroy'
+  get    'login' =>'dashboard#new'
+  post   'login' => 'dashboard#create'
+  delete 'logout' => 'dashboard#destroy'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
