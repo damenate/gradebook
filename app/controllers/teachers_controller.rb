@@ -1,6 +1,7 @@
 class TeachersController < ApplicationController
   before_action :set_teacher, only: [:show, :edit, :update, :destroy]
   before_action :logged_in?
+  before_action :deny_access
   # GET /teachers
   def index
     @teachers = Teacher.all
@@ -58,5 +59,9 @@ class TeachersController < ApplicationController
 
     def logged_in?
       redirect_to login_path "Must be Logged in" unless session[:logged_in_teacher]
+    end
+
+    def deny_access
+      redirect_to grades_path, notice: "Access Denied" unless session[:logged_in_teacher]
     end
 end

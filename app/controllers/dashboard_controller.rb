@@ -1,7 +1,6 @@
 class DashboardController < ApplicationController
 
   def new
-
   end
 
   def create

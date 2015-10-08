@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   root 'dashboard#new'
   get    'login' =>'dashboard#new'
   post   'login' => 'dashboard#create'
-  delete 'logout' => 'dashboard#destroy'
+  delete 'login' => 'dashboard#destroy'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
