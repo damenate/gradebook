@@ -17,11 +17,19 @@ raiden = Parent.create!(name: "Raiden", email: "raiden@cloud.com", password: "ra
 
 bruce.students << jet
 impan.students << don
+bruce.save
+ipman.save
 
 jet.parents << raiden
 don.parents << splinter
-
-bruce.save
-ipman.save
 don.save
 jet.save
+
+
+jetgrade = Grade.create!(date: "10-07-15", assignment_name: "Karate", grade: 99)
+dongrade = Grade.create!(date: "12-06-15", assignment_name: "Science", grade: 100)
+
+jet.grades << jetgrade
+don.grades << dongrade
+jet.save
+don.save

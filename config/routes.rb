@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :students
   resources :teachers
 
-  root 'dashboard#new'
+  root 'students#new'
   get    'login' =>'dashboard#new'
   post   'login' => 'dashboard#create'
   delete 'login' => 'dashboard#destroy'
