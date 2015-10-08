@@ -16,25 +16,25 @@
   </tbody>
 
   <p>
-    <th>Name</th>
-  <th>Email</th>
   <th colspan="5"></th>
   <% teacher.students.each do |student| %>
   <tbody>
     <tr>
-      <td><%= student.name %></td>
+      <th>Name:</th>
+      <td><%= student.name %></td>&nbsp;&nbsp;
+      <th>Email:</th>
       <td><%= student.email %></td>
-    <p class="">
-      <br>
-      <td><%= link_to 'Add Parent', new_parent_path %></td>&nbsp;&nbsp;
-      <td><%= link_to 'Add Grade', new_grade_path %></td>&nbsp;&nbsp;
-      <td><%= link_to 'Show', student %></td>&nbsp;&nbsp;
-      <td><%= link_to 'Edit', edit_student_path(student) %></td>&nbsp;&nbsp;
+    <p>
+      <td><%= link_to 'Add Parent', new_parent_path %></td>&nbsp;
+      <td><%= link_to 'Add Grade', new_grade_path %></td>&nbsp;
+      <td><%= link_to 'Show', student %></td>&nbsp;
+      <td><%= link_to 'Edit', edit_student_path(student) %></td>&nbsp;
       <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </p>
     </tr>
   </tbody>
 </p>
+  <br>
   <% end %>
   <p><%= link_to 'Add New Student to Class', new_student_path(teacher) %></p>
 <% end %>
