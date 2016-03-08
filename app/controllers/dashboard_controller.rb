@@ -13,10 +13,10 @@ class DashboardController < ApplicationController
         redirect_to teachers_path, notice: "Login Success"
       elsif s && s.authenticate(params[:password])
         session[:logged_in_student] = true
-        redirect_to student_path(s.id), notice: "Login Success."
+        redirect_to students_path(s.id), notice: "Login Success."
       elsif rent && rent.authenticate(params[:password])
         session[:logged_in_parent] =true
-        redirect_to student_path(rent.s.id), notice: "Login Success"
+        redirect_to students_path(rent.s.id), notice: "Login Success"
       else
         redirect_to login_path, notice: "Login Denied"
       end

@@ -49,7 +49,7 @@ class StudentsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_student
-      @student = Student.find(params[:id])
+      @logged_in_student = Student.find_by_id(session[:student_id])
     end
 
     # Only allow a trusted parameter "white list" through.
@@ -58,7 +58,7 @@ class StudentsController < ApplicationController
     end
 
     def logged_in?
-      redirect_to login_path "Must be Logged in" unless session[:logged_in_teacher]
+      redirect_to login_path "Must be Logged in" unless session[:logged_in_student]
     end
 
     def deny_access

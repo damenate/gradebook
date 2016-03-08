@@ -48,7 +48,7 @@ class TeachersController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_current_teacher
+    def set_teacher
       @logged_in_teacher = Teacher.find_by_id(session[:teacher_id])
     end
 

@@ -13,10 +13,9 @@ class LoginLogoutTest < ActionDispatch::IntegrationTest
     assert_redirected_to teachers_path
     follow_redirect!
     assert_select "tr", 2
-
+  end
   test "can create students" do
     post login_path, sessions: {email:"damenatekim@awesome.com", password:"damekim"}
     post students_path, student: {name: "", email: "", password: ""}
-    
   end
 end
