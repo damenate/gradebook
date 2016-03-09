@@ -2,9 +2,9 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :grades
-resources :parents
-resources :students
-resources :teachers
+    resources :parents
+    resources :students
+    resources :teachers
 
     root to: "grades#index"
   end
