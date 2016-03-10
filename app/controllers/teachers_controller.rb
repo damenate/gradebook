@@ -13,7 +13,7 @@ class TeachersController < ApplicationController
 
   # GET /teachers/new
   def new
-    @teacher = Teacher.new
+    @teacher = Teacher.new#(teahcer_id: session[:user_id])
   end
 
   # GET /teachers/1/edit

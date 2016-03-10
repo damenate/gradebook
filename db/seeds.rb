@@ -16,7 +16,7 @@ splinter = Parent.create!(name: "Splinter", email: "splinter@sewer.com", passwor
 raiden = Parent.create!(name: "Raiden", email: "raiden@cloud.com", password: "raiden", student_id: 1)
 
 bruce.students << jet
-impan.students << don
+ipman.students << don
 bruce.save
 ipman.save
 
